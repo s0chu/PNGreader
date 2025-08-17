@@ -63,21 +63,35 @@ class Decoder:
 
     def process(this , chunk):
 
-        if chunk.name != "IDAT" : 
-            return 0
-        
         if chunk.name not in this.chunk_type:
-            raise Exception("Chunk name unknwown")
+        #    raise Exception("Chunk name unknwown") 
+            return
+        #debugging purposes
         
         this.chunk_type[chunk.name].append(this.chunk_init[chunk.name](chunk))
+    
+    def next_bit(this):
+        this.curr_byte = 0
 
+        while this.curr_byte < len(this.data):
+            this.pos_bit = -1
+
+            while this.pos_bit <= 6: 
+                this.pos_bit += 1
+                yield this.data[this.curr_byte] >> this.pos_bit & 1
+
+            this.curr_byte += 1
+
+    def is_border_bit(this):
+        return this.pos_bit == 7
+    
     def solve_idat(this):
-        data = b''
+        this.data = b''
 
         for c in this.idat:
-            data += c.data
+            this.data += c.data
         
-        CMF = data[0]
+        CMF = this.data[0]
         CM = (CMF & 0xF)
         CINFO = (CMF >> 4)
 
@@ -87,9 +101,9 @@ class Decoder:
         if CINFO != 7: 
             raise Exception("Unkonwn base")
         
-        FLG = data[1]
-        FCHECK = (FLG & 0x1F)
-        FDICT = (FLG >> 5 & 1)
+        FLG = this.data[1]
+        FCHECK = (FLG & 0x1F) #useless, ales doar ca sa faca CMF | FLG M31
+        FDICT = (FLG >> 5 & 1) 
         FLEVEL = (FLG >> 6)
 
         if (CMF * 256 + FLG) % 31 != 0:
@@ -99,6 +113,5 @@ class Decoder:
             raise Exception("Dict used")
         
 
-        ADLER32 = int.from_bytes(data[len(data) - 4 : ] , 'big')
-        data = data[2 : data[len(data) - 4]]
-        
+        ADLER32 = int.from_bytes(this.data[len(this.data) - 4 : ] , 'big')
+        this.data = this.data[2 : this.data[len(this.data) - 4]]
