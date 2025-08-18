@@ -16,3 +16,4 @@ while(1):
         break
 
 decoder.solve_idat()
+decoder.ihdr[0].print()

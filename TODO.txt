@@ -1,0 +1,15 @@
+[X] reading PNG chunks
+[ ] implementing all chunks:
+    [ ] IDAT
+        [X] ZLIB
+        [ ] FILTER
+        [ ] DATA
+    [X] IHDR
+    [X] IEND
+    [ ] PLTE
+[ ] printing format 
+    - looking colored and pretty 
+    - using RICH library
+[ ] recap PNG format
+[ ] format GITHUB 
+    - thorough details

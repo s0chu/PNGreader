@@ -55,11 +55,28 @@ class IDAT(Chunk):
     def __init__(this , chunk):
         super().init(chunk)
 
+class IHDR(Chunk):
+    def __init__(this , chunk):
+        super().init(chunk)
+        this.width =  int.from_bytes(this.data[0 : 4] , "big")
+        this.height = int.from_bytes(this.data[4 : 8] , "big")
+        this.bit_depth = int.from_bytes(this.data[8 : 9] , "big")
+        this.color_type = int.from_bytes(this.data[9 : 10] , "big")
+        this.compression_method = int.from_bytes(this.data[10 : 11] , "big")
+        this.filter_method = int.from_bytes(this.data[11 : 12] , "big")
+        this.interlace_method = int.from_bytes(this.data[12 : 13] , "big")
+    
+    def print(this):
+        print(f"Resolution: {this.height} X {this.width}")
+        print(f"Color Type: {this.color_type}")
+
 class Decoder:
     def __init__(this):
         this.idat = []
-        this.chunk_type = { "IDAT" : this.idat }
-        this.chunk_init = { "IDAT" : IDAT }
+        this.ihdr = []
+
+        this.chunk_type = { "IDAT" : this.idat , "IHDR" : this.ihdr }
+        this.chunk_init = { "IDAT" : IDAT ,      "IHDR" : IHDR      } 
 
     def process(this , chunk):
 
@@ -280,7 +297,6 @@ class Decoder:
             else:
                 if BTYPE == "10":
                     this.prepare_dynamic_huffman_code()
-                    print("dynamnic")
                 else:
                     this.prepare_fixed_huffman_code()
 
@@ -344,6 +360,12 @@ class Decoder:
         print(f'adler32: {checksum} | decompressed: {adler}')
         return adler == checksum
     
+    def unfilter_png_data(this):
+        return 
+    
+    def parse_png_data(this):
+        return 
+    
     def solve_idat(this):
         this.data = b''
 
@@ -378,3 +400,6 @@ class Decoder:
 
         if this.ADLER32_validator(ADLER32) == False:
             raise Exception("ADLER32 error")
+         
+        this.unfilter_png_data()
+        this.parse_png_data()
