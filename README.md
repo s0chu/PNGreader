@@ -177,7 +177,6 @@ Reseting: ESC[m
 ```
 
 Because of the limited number of bits that are supported in the terminal, the colors are capped in 8 bits. So for 16 bit colors, they will suffer a loss of quality in the terminal
----
 
 ## Bibliography
 - [ZLIB](https://datatracker.ietf.org/doc/html/rfc1950)
