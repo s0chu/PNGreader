@@ -26,42 +26,48 @@ RGB_code is in the following hex format:  'hex(R_value)hex(G_value)hex(B_value)'
 
 ## Usage
     Run 'main.py':
-    ```
+ ```
     python main.py [path_to_png]
-    ```
+```
 
 <details>
-<summary>color_type_0_sample</summary>
+<summary>Grayscale sample</summary>
 
-![Color Type 0](images/color_type_0_sample.png)
+![Color Type 0](images/color_type_0_sample_16_big.png)
 
 </details>
 
 <details>
-<summary>color_type_2_sample</summary>
+<summary>RGB sample</summary>
 
-![Color Type 2](images/color_type_2_sample.png)
-
-</details>
-
-<details>
-<summary>color_type_3_sample</summary>
-
-![Color Type 3](images/color_type_3_sample.png)
+![Color Type 2](images/color_type_2_sample_16_bit.png)
 
 </details>
 
 <details>
-<summary>color_type_4_sample</summary>
+<summary>Palette sample</summary>
 
-![Color Type 4](images/color_type_4_sample.png)
+![Color Type 3](images/color_type_3_sample_8_bit.png)
 
 </details>
 
 <details>
-<summary>color_type_6_sample</summary>
+<summary>Grayscale + alpha sample</summary>
 
-![Color Type 6](images/color_type_6_sample.png)
+![Color Type 4](images/color_type_4_sample_8_bit.png)
+
+</details>
+
+<details>
+<summary>RGB + alpha sample</summary>
+
+![Color Type 6](images/color_type_6_sample_8_bit.png)
+
+</details>
+
+<summary>Big file sample</summary>
+
+![Big file](images/big_file_sample_8_bit.png)
 
 </details>
 ---
@@ -119,7 +125,7 @@ Not supported.
 ---
 
 ### Colors in the terminal
-Used ANSI escape codes in the following form:  
+Used ANSII Escape Codes:  
 
 ```
 Changing background color: ESC[48;2;R;G;Bm
@@ -127,6 +133,7 @@ Changing foreground color: ESC[38;2;R;G;Bm]
 Reseting: ESC[m
 ```
 
+Because of the limited number of bits that are supported in the terminal, the colors are capped in 8 bits. So for 16 bit colors, they will suffer a loss of quality in the terminal
 ---
 
 ## Bibliography
