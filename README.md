@@ -19,26 +19,55 @@ This project wants to be a rudimentary PNG reader for educational purposes, a PN
 - Number of blocks in the ZLIB format
 - Number of distinct pixels and the pixels themselves  
 
-Pixel format:  
-```
-colored_square #RGB_code Opacity_percent
-```
+Pixel format:  'colored_square #RGB_code Opacity_percent'
 
-RGB_code is in the following hex format:  
-```
-hex(R_value)hex(G_value)hex(B_value)
-```
+RGB_code is in the following hex format:  'hex(R_value)hex(G_value)hex(B_value)'
 
-###### IMAGES AND VISUAL TUTORIAL
 
+## Usage
+    Run 'main.py':
+    ```
+    python main.py [path_to_png]
+    ```
+
+<details>
+<summary>color_type_0_sample</summary>
+
+![Color Type 0](images/color_type_0_sample.png)
+
+</details>
+
+<details>
+<summary>color_type_2_sample</summary>
+
+![Color Type 2](images/color_type_2_sample.png)
+
+</details>
+
+<details>
+<summary>color_type_3_sample</summary>
+
+![Color Type 3](images/color_type_3_sample.png)
+
+</details>
+
+<details>
+<summary>color_type_4_sample</summary>
+
+![Color Type 4](images/color_type_4_sample.png)
+
+</details>
+
+<details>
+<summary>color_type_6_sample</summary>
+
+![Color Type 6](images/color_type_6_sample.png)
+
+</details>
 ---
 
 ## Implementation details
-There are 5 pixel classes, representing each Color Type. Each class has the same format so that they can be casted into a dictionary table in pairs:
-
-```
-(color_type : pixel_color_type_class)
-```
+There are 5 pixel classes, representing each Color Type. Each class has the same format so that they can be casted into a dictionary table in pairs: '(color_type : pixel_color_type_class)'
 
 The implementation of each class has:
 - a constructor that regards bit depth  
@@ -59,10 +88,8 @@ Putting `IDAT` data chunks together, the decompression starts by decoding each b
   - one for literal/length  
   - another one for distance  
 
-The `trie` class has a constructor that creates a Huffman Trie with the restriction:  
-```
-|huffman(alphabet_i)| = length_i
-```
+The `trie` class has a constructor that creates a Huffman Trie with the restriction:  '|huffman(alphabet_i)| = length_i'
+
 with a sorted alphabet.  
 
 - The trie itself is implemented offline with static memory. Each node of the trie is an index into an array with an upper bound of `sum(length_i)`.  
@@ -73,12 +100,6 @@ with a sorted alphabet.
 Lengths and distances information are placed into 2 arrays structured together under the `Table` class:  
 - `extra_bits`  
 - `lengths`  
-
-Where:  
-```
-extra_bits[value] = #extra_bits
-```
-(`lengths` follows the same logic).
 
 #### Why tries are encoded into lengths form
 1. Every interpretation of the code is unique.  
