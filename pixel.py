@@ -81,7 +81,7 @@ class Pixel_4: #bit_depth = 8 16
     def __eq__(this , b):
         return this.grayscale == b.grayscale and this.alpha == b.alpha
     
-    def __eq__(this):
+    def __hash__(this):
         return (this.grayscale << 16) + this.alpha
     
 class Pixel_6: #bit_depth = 8 16
