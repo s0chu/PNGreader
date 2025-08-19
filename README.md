@@ -33,41 +33,42 @@ RGB_code is in the following hex format:  'hex(R_value)hex(G_value)hex(B_value)'
 <details>
 <summary>Grayscale sample</summary>
 
-![Color Type 0](images/color_type_0_sample_16_big.png)
+![Color Type 0](images/samples/color_type_0_sample_16_big.png)
 
 </details>
 
 <details>
 <summary>RGB sample</summary>
 
-![Color Type 2](images/color_type_2_sample_16_bit.png)
+![Color Type 2](images/samples/color_type_2_sample_16_bit.png)
 
 </details>
 
 <details>
 <summary>Palette sample</summary>
 
-![Color Type 3](images/color_type_3_sample_8_bit.png)
+![Color Type 3](images/samples/color_type_3_sample_8_bit.png)
 
 </details>
 
 <details>
 <summary>Grayscale + alpha sample</summary>
 
-![Color Type 4](images/color_type_4_sample_8_bit.png)
+![Color Type 4](images/samples/color_type_4_sample_8_bit.png)
 
 </details>
 
 <details>
 <summary>RGB + alpha sample</summary>
 
-![Color Type 6](images/color_type_6_sample_8_bit.png)
+![Color Type 6](images/samples/color_type_6_sample_8_bit.png)
 
 </details>
 
+<details>
 <summary>Big file sample</summary>
 
-![Big file](images/big_file_sample_8_bit.png)
+![Big file](images/samples/big_file_sample_8_bit.png)
 
 </details>
 ---
