@@ -18,6 +18,7 @@ This project wants to be a rudimentary PNG reader for educational purposes, a PN
 - Chunks that build up the file
 - Number of blocks in the ZLIB format
 - Number of distinct pixels and the pixels themselves  
+- Find out if the file is invalid / corrupted via exceptions in the running phase
 
 Pixel format:  `colored_square #RGB_code Opacity_percent`
 
