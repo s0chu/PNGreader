@@ -1,19 +1,25 @@
 import sys
 import chunks
+import decoder
 
 file = open(sys.argv[1] , "rb")
 
 signature = file.read(8)
 
-decoder = chunks.Decoder()
+decoder = decoder.Decoder()
+chunk_counter = 0
 
 while(1):
     chunk = chunks.Chunk(file)
     decoder.process(chunk)
-    print(chunk.name)
+
+    chunk_counter += 1
+    print(f"Chunk #{chunk_counter}: {chunk.name}")
 
     if(chunk.name == "IEND"):
         break
 
-decoder.solve_idat()
-decoder.ihdr[0].print()
+chunks.ihdr[0].print()
+decoder.solve_idat(chunks.ihdr[0])
+chunks.ihdr[0].print()
+decoder.print()

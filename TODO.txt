@@ -1,12 +1,13 @@
 [X] reading PNG chunks
-[ ] implementing all chunks:
-    [ ] IDAT
+[X] implementing all chunks:
+    [X] IDAT
         [X] ZLIB
-        [ ] FILTER
-        [ ] DATA
+        [X] FILTER
+        [X] DATA
     [X] IHDR
     [X] IEND
-    [ ] PLTE
+    [X] PLTE
+    [|] TeXT
 [ ] printing format 
     - looking colored and pretty 
     - using RICH library
