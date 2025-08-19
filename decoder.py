@@ -399,6 +399,7 @@ class Decoder:
         for j in this.pixel_set:
             j.print()
 
+        print(f"Distinct pixels: {len(this.pixel_set)}")
     def solve_idat(this , IHDR):
         this.data = b''
 

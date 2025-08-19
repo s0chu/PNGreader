@@ -64,7 +64,10 @@ class IHDR(Chunk):
         this.compression_method = int.from_bytes(this.data[10 : 11] , "big")
         this.filter_method =      int.from_bytes(this.data[11 : 12] , "big")
         this.interlace_method =   int.from_bytes(this.data[12 : 13] , "big")
-    
+
+        if this.interlace_method == 1:
+            raise Exception("Interlace method detected! Feature not implemented")
+        
     def print(this):
         print(f"Resolution: {this.height} X {this.width}")
         print(f"Color Type: {this.color_type}")
