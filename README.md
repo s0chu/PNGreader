@@ -38,9 +38,23 @@ python main.py [path_to_png]
 </details>
 
 <details>
+<summary>Grayscale sample</summary>
+
+![Color Type 0](images/results/color_type_0_result_16_big.png)
+
+</details>
+
+<details>
 <summary>RGB sample</summary>
 
 ![Color Type 2](images/samples/color_type_2_sample_16_bit.png)
+
+</details>
+
+<details>
+<summary>RGB sample</summary>
+
+![Color Type 2](images/results/color_type_2_result_16_bit.png)
 
 </details>
 
@@ -52,11 +66,26 @@ python main.py [path_to_png]
 </details>
 
 <details>
+<summary>Palette sample</summary>
+
+![Color Type 3](images/results/color_type_3_result_8_bit.png)
+
+</details>
+
+<details>
 <summary>Grayscale + alpha sample</summary>
 
 ![Color Type 4](images/samples/color_type_4_sample_8_bit.png)
 
 </details>
+
+<details>
+<summary>Grayscale + alpha sample</summary>
+
+![Color Type 4](images/results/color_type_4_result_8_bit.png)
+
+</details>
+
 
 <details>
 <summary>RGB + alpha sample</summary>
@@ -66,9 +95,23 @@ python main.py [path_to_png]
 </details>
 
 <details>
+<summary>RGB + alpha sample</summary>
+
+![Color Type 6](images/results/color_type_6_result_8_bit.png)
+
+</details>
+
+<details>
 <summary>Big file sample</summary>
 
 ![Big file](images/samples/big_file_sample_8_bit.png)
+
+</details>
+
+<details>
+<summary>Big file sample</summary>
+
+![Big file](images/results/big_file_result_8_bit.png)
 
 </details>
 
@@ -125,7 +168,7 @@ Not supported.
 ---
 
 ### Colors in the terminal
-Used ANSII Escape Codes:  
+Used ANSII Escape Code:  
 
 ```
 Changing background color: ESC[48;2;R;G;Bm
@@ -137,8 +180,7 @@ Because of the limited number of bits that are supported in the terminal, the co
 ---
 
 ## Bibliography
-- https://datatracker.ietf.org/doc/html/rfc1950  
-- https://www.rfc-editor.org/rfc/rfc1951.html  
-- https://www.rfc-editor.org/rfc/rfc2083.html  
-- https://en.wikipedia.org/wiki/ANSI_escape_code  
-- https://www.geeksforgeeks.org/python/inheritance-in-python/  
+- [ZLIB](https://datatracker.ietf.org/doc/html/rfc1950)
+- [DEFLATE](https://www.rfc-editor.org/rfc/rfc1951.html)
+- [PNG](https://www.rfc-editor.org/rfc/rfc2083.html)  
+- [ANSII ESCAPE CODE](https://en.wikipedia.org/wiki/ANSI_escape_code)  

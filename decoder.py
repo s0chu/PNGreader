@@ -412,7 +412,7 @@ class Decoder:
             count += 1
             j.print()
 
-            if count > 50:
+            if count > 40:
                 print(f"({len(this.pixel_set) - count + 1} more)")
                 break
 
