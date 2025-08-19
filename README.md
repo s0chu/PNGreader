@@ -26,7 +26,7 @@ RGB_code is in the following hex format:  'hex(R_value)hex(G_value)hex(B_value)'
 
 ## Usage
     Run 'main.py':
- ```
+```
     python main.py [path_to_png]
 ```
 
