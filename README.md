@@ -33,14 +33,14 @@ python main.py [path_to_png]
 <details>
 <summary>Grayscale sample</summary>
 
-![Color Type 0](images/samples/color_type_0_sample_16_big.png)
+![Color Type 0](images/samples/color_type_0_sample_16_bit.png)
 
 </details>
 
 <details>
-<summary>Grayscale sample</summary>
+<summary>Grayscale result</summary>
 
-![Color Type 0](images/results/color_type_0_result_16_big.png)
+![Color Type 0](images/results/color_type_0_result_16_bit.png)
 
 </details>
 
@@ -52,7 +52,7 @@ python main.py [path_to_png]
 </details>
 
 <details>
-<summary>RGB sample</summary>
+<summary>RGB result</summary>
 
 ![Color Type 2](images/results/color_type_2_result_16_bit.png)
 
@@ -66,7 +66,7 @@ python main.py [path_to_png]
 </details>
 
 <details>
-<summary>Palette sample</summary>
+<summary>Palette result</summary>
 
 ![Color Type 3](images/results/color_type_3_result_8_bit.png)
 
@@ -80,7 +80,7 @@ python main.py [path_to_png]
 </details>
 
 <details>
-<summary>Grayscale + alpha sample</summary>
+<summary>Grayscale + alpha result</summary>
 
 ![Color Type 4](images/results/color_type_4_result_8_bit.png)
 
@@ -95,7 +95,7 @@ python main.py [path_to_png]
 </details>
 
 <details>
-<summary>RGB + alpha sample</summary>
+<summary>RGB + alpha result</summary>
 
 ![Color Type 6](images/results/color_type_6_result_8_bit.png)
 
@@ -109,7 +109,7 @@ python main.py [path_to_png]
 </details>
 
 <details>
-<summary>Big file sample</summary>
+<summary>Big file result</summary>
 
 ![Big file](images/results/big_file_result_8_bit.png)
 
