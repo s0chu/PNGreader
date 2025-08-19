@@ -19,13 +19,13 @@ This project wants to be a rudimentary PNG reader for educational purposes, a PN
 - Number of blocks in the ZLIB format
 - Number of distinct pixels and the pixels themselves  
 
-Pixel format:  'colored_square #RGB_code Opacity_percent'
+Pixel format:  `colored_square #RGB_code Opacity_percent`
 
-RGB_code is in the following hex format:  'hex(R_value)hex(G_value)hex(B_value)'
+RGB_code is in the following hex format:  `hex(R_value)hex(G_value)hex(B_value)`
 
 
 ## Usage
-Run 'main.py':
+Run `main.py`:
 ```
 python main.py [path_to_png]
 ```
@@ -71,10 +71,9 @@ python main.py [path_to_png]
 ![Big file](images/samples/big_file_sample_8_bit.png)
 
 </details>
----
 
 ## Implementation details
-There are 5 pixel classes, representing each Color Type. Each class has the same format so that they can be casted into a dictionary table in pairs: '(color_type : pixel_color_type_class)'
+There are 5 pixel classes, representing each Color Type. Each class has the same format so that they can be casted into a dictionary table in pairs: `(color_type : pixel_color_type_class)`
 
 The implementation of each class has:
 - a constructor that regards bit depth  
@@ -95,7 +94,7 @@ Putting `IDAT` data chunks together, the decompression starts by decoding each b
   - one for literal/length  
   - another one for distance  
 
-The `trie` class has a constructor that creates a Huffman Trie with the restriction:  '|huffman(alphabet_i)| = length_i'
+The `trie` class has a constructor that creates a Huffman Trie with the restriction:  `|huffman(alphabet_i)| = length_i`
 
 with a sorted alphabet.  
 
