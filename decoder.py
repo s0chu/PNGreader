@@ -2,6 +2,8 @@ import chunks
 import trie
 import math
 import pixel
+import time
+import ansii
 
 class Decoder:
     def __init__(this):
@@ -211,13 +213,15 @@ class Decoder:
         this.prepare_for_reading()
         count_block = 0
 
+        start_time = time.time()
+
         while 1:
             header = this.read(1 , "little") + this.read(2 , "little")
             BFINAL = header[0]
             BTYPE = header[1:]
 
             count_block += 1
-            print(f'Block no. {count_block} >> Compression Method: {BTYPE}')
+            #print(f'Block no. {count_block} >> Compression Method: {BTYPE}')
 
             if BTYPE == "11":
                 raise Exception("Block error")
@@ -272,7 +276,11 @@ class Decoder:
                 break
             
         #this.read(3 , 'little')
+        end_time = time.time()
+        time_elapsed = end_time - start_time
+        time_elapsed = f"{time_elapsed:.2f}"
 
+        print(f"Blocks read: {ansii.color(255, 0, 98 , count_block)} in {ansii.color(0 , 255 , 191 , time_elapsed)} seconds")
     def ADLER32_validator(this , checksum):
         s1 = 1
         s2 = 0
@@ -286,7 +294,7 @@ class Decoder:
             s2 %= MOD
         
         adler = s2 * 65536 + s1
-        print(f'adler32: {checksum} | decompressed: {adler}')
+        #print(f'adler32: {checksum} | decompressed: {adler}')
         return adler == checksum
     
     def paeth_predictor(this , a , b , c):
@@ -399,7 +407,7 @@ class Decoder:
         for j in this.pixel_set:
             j.print()
 
-        print(f"Distinct pixels: {len(this.pixel_set)}")
+        print(f"Distinct pixels: {ansii.color(0 , 255 , 60 , len(this.pixel_set))}")
     def solve_idat(this , IHDR):
         this.data = b''
 
@@ -417,7 +425,7 @@ class Decoder:
             raise Exception("Unkonwn base")
         
         FLG = this.data[1]
-        FCHECK = (FLG & 0x1F) #useless, ales doar ca sa faca CMF | FLG M31
+        FCHECK = (FLG & 0x1F) #useless
         FDICT = (FLG >> 5 & 1) 
         FLEVEL = (FLG >> 6)
 

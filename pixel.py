@@ -18,7 +18,15 @@ def print_pixel(R , G , B , alpha):
     hex_color = "#" + f"{R:02x}" + f"{G:02x}" + f"{B:02x}"
     reset = "\x1b[m"
 
-    print(color + char * 3 + reset + "  " + text + hex_color + reset + "  " + f"{proc:.2f}" + "%")
+    if proc < 10:
+        blanks = "  "
+    elif proc < 100:
+        blanks = " "
+    else:
+        blanks = ""
+
+    proc_string = blanks + f"{proc:0.2f}"
+    print(color + char * 3 + reset + "  " + text + hex_color + reset + "  " + proc_string + "%")
 
 class Pixel_0: #bit_depth = 1 , 2 , 4 , 8 , 16
     def __init__(this , bit_depth , read):

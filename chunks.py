@@ -1,5 +1,6 @@
 import decoder
 import pixel
+import ansii
 
 class Chunk:
     def CRC_validator(this):
@@ -69,9 +70,8 @@ class IHDR(Chunk):
             raise Exception("Interlace method detected! Feature not implemented")
         
     def print(this):
-        print(f"Resolution: {this.height} X {this.width}")
-        print(f"Color Type: {this.color_type}")
-        print(f"Interlace: {True if this.interlace_method == 1 else False}")
+        print(f"Resolution: {ansii.color(255 , 0 , 0 , this.height)} X {ansii.color(255 , 0 , 0 , this.width)}   Color Type: {ansii.color(247 , 20 , 194 , this.color_type)}   Bit Depth: {ansii.color(255 , 230 , 0 , this.bit_depth)}   Interlace: {ansii.color(0 , 195 , 255 , True if this.interlace_method == 1 else False)}")
+
 
 
 class PLTE(Chunk):

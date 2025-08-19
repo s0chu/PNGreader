@@ -8,9 +8,8 @@
     [X] IEND
     [X] PLTE
     [|] TeXT
-[ ] printing format 
-    - looking colored and pretty 
-    - using RICH library
+[X] printing format 
+    - looking colored and clean
 [ ] recap PNG format
 [ ] format GITHUB 
     - thorough details
