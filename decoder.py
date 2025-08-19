@@ -404,10 +404,18 @@ class Decoder:
             this.pixel_set.add(j)
     
     def print(this):
+        print(f"Distinct pixels: {ansii.color(0 , 255 , 60 , len(this.pixel_set))}")
+
+        count = 0
+
         for j in this.pixel_set:
+            count += 1
             j.print()
 
-        print(f"Distinct pixels: {ansii.color(0 , 255 , 60 , len(this.pixel_set))}")
+            if count > 50:
+                print(f"({len(this.pixel_set) - count + 1} more)")
+                break
+
     def solve_idat(this , IHDR):
         this.data = b''
 
