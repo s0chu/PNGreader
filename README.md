@@ -31,14 +31,14 @@ Run `main.py`:
 python main.py [path_to_png]
 ```
 
-<details open>
+<details>
 <summary>Grayscale sample</summary>
 
 ![Color Type 0](images/samples/color_type_0_sample_16_bit.png)
 
 </details>
 
-<details>
+<details open>
 <summary>Grayscale result</summary>
 
 ![Color Type 0](images/results/color_type_0_result_16_bit.png)
