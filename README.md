@@ -173,7 +173,7 @@ Used ANSII Escape Code:
 
 ```
 Changing background color: ESC[48;2;R;G;Bm
-Changing foreground color: ESC[38;2;R;G;Bm]
+Changing foreground color: ESC[38;2;R;G;Bm
 Reseting: ESC[m
 ```
 
