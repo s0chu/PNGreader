@@ -66,7 +66,7 @@ python main.py [path_to_png]
 
 </details>
 
-<details>
+<details open>
 <summary>Palette result</summary>
 
 ![Color Type 3](images/results/color_type_3_result_8_bit.png)
