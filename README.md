@@ -4,7 +4,7 @@
 - learning Python  
 - reading comprehension of raw documentation without any additional help  
 - training coding structure for big projects  
-
+- seemed cool to decode pixels of a PNG file and printing the color in terminal
 ---
 
 ## Description
